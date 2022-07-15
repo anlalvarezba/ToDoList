@@ -4,8 +4,10 @@ import './todoItem.css';
 
 
 function TodoItem(props){
+    const [completedState, setCompleteState] =React.useState(props.completed)
     const onCompleteButton = () => {
         alert("Ya completaste el todo " + props.text);
+        setCompleteState(!completedState);
     };
     
     const onDeleteButton = () => {
@@ -16,11 +18,11 @@ function TodoItem(props){
     return(
         <li className="TodoItem">
             <span 
-                className={`Icon Icon-check ${props.completed && 'Icon-check--active'}`}
+                className={`Icon Icon-check ${completedState && 'Icon-check--active'}`}
                 onClick={onCompleteButton}>
                 √
             </span>
-            <p className={`TodoItem-p ${props.completed && 'TodoItem-p--complete'}`}>
+            <p className={`TodoItem-p ${completedState && 'TodoItem-p--complete'}`}>
                 {props.text}
             </p>
             <span 
