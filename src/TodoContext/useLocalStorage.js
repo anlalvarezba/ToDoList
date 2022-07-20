@@ -29,7 +29,7 @@ function useLocalStorage(itemName, initialValue){
         // Se puede usar la ultima parte del try/catch para terminar la carga
         setLoading(false);
       }
-    } , 1000);
+    } , 6000);
   }, []);
 
   

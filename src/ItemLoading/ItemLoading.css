@@ -1,0 +1,86 @@
+.TodoItemLoading {
+    background-color: #FAFAFA;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 24px;
+    box-shadow: 0px 5px 50px rgba(32, 35, 41, 0.15);
+  }
+  .ItemLoading-1 {    
+    animation-name: reduceItem1;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 4s;
+  }
+  .ItemLoading-2 {    
+    animation-name: reduceItem2;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 4s;
+  }
+  .ItemLoading-3 {    
+    animation-name: reduceItem3;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 4s;
+  }
+  .ItemLoading-4 {    
+    animation-name: reduceItem4;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 4s;
+  }
+
+  @keyframes reduceItem1 {
+    0% {opacity: 0;}
+    25% {opacity: 1;}
+  }
+
+  @keyframes reduceItem2 {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+  }
+
+  @keyframes reduceItem3 {
+    0% {opacity: 0;}
+    75% {opacity: 1;}
+  }
+
+  @keyframes reduceItem4 {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+  }
+
+  .TodoItemLoading-p {
+    margin: 24px 0 24px 24px;
+    width: calc(100% - 120px);
+    font-size: 18px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  .IconLoading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 48px;
+    width: 48px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .IconLoading-check {
+    position: absolute;
+    left: 12px;
+  }
+  
+  .IconLoading-delete {
+    position: absolute;
+    top: -24px;
+    right: 0;
+  }

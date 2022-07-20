@@ -8,6 +8,7 @@ import { TodoItem } from '../TodoItem/index';
 import { CreateTodoButton } from '../CreateTodoButton/index';
 import { Modal } from '../Modal/index';
 import { TodoForm } from '../TodoForm/index';
+import { ItemLoading } from '../ItemLoading/index';
 
 
 function AppUI (){
@@ -29,7 +30,10 @@ function AppUI (){
                 {/* Mostramos un mensaje en caso de que ocurra algun error */}
                 {error && <p>Desesperate, hubo un error.</p>}
                 {/* Mostramos un mensaje de cargando, cuando la aplicacion esta cargando los datos. */}
-                {loading && <p>Estamos cargando, no desesperes.</p>}
+                {loading && <React.Fragment>
+                    <p>Charging...</p>
+                    <ItemLoading></ItemLoading>
+                  </React.Fragment>}
                 {/* Si terminamos de cargar y no existen TODOs, se muestra un mensaje para crear el primer TODO. */}
                 {(!loading && !searchedTodos.lenght) && <p>!Crea tu primer TODO!</p>}
                 {searchedTodos.map(todo => (
