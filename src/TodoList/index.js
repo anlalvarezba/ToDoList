@@ -4,7 +4,11 @@ import './todoList.css';
 
 function TodoList(props){
     return(
-        <section>
+        <section className="TodoList-container">
+        {props.error && props.onError()}
+        {props.loading && props.onLoading()} 
+        {(!props.loading && !props.searchedTodos.lenght) && props.onEmptyTodos()}
+        {props.searchedTodos.map(todo => props.render(todo))}
             <ul>
                 {props.children}
             </ul>

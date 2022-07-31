@@ -47,12 +47,26 @@ function App() {
           setSearchValue={setSearchValue}
         />
       </TodoHeader>
-            <TodoList>
-              {/* Mostramos un mensaje en caso de que ocurra algun error */}
+            <TodoList 
+              error={error}
+              loading={loading}
+              searchedTodos={searchedTodos}
+              onError={() => <TodosError />}
+              onLoading={() => <TodosLoading />}
+              onEmptyTodos={() => <EmptyTodos />}
+              render={todo => (
+                <TodoItem 
+                  key={todo.text} 
+                  completed={todo.completed} 
+                  text={todo.text}
+                  onComplete={() => completeTodo(todo.text)}
+                  onDelete={() => deleteTodo(todo.text)}
+                  />
+              )}
+            />
+            {/* <TodoList>
               {error && <TodosError error={error}></TodosError>}
-              {/* Mostramos un mensaje de cargando, cuando la aplicacion esta cargando los datos. */}
               {loading && <TodosLoading></TodosLoading>} 
-              {/* Si terminamos de cargar y no existen TODOs, se muestra un mensaje para crear el primer TODO. */}
               {(!loading && !searchedTodos.lenght) && <EmptyTodos></EmptyTodos>}
               {searchedTodos.map(todo => (
                 <TodoItem 
@@ -63,7 +77,7 @@ function App() {
                   onDelete={() => deleteTodo(todo.text)}
                   />
               ))} 
-            </TodoList>  
+            </TodoList>   */}
             { !!openModal && (
               <Modal>
                 <TodoForm 
