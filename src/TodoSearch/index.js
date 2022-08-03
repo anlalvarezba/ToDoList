@@ -4,7 +4,7 @@ import './todoSearch.css';
 
 
 
-function TodoSearch({searchValue, setSearchValue}){
+function TodoSearch({searchValue, setSearchValue, loading}){
     
 
     const onSearchValueChange = (event) => {
@@ -17,6 +17,7 @@ function TodoSearch({searchValue, setSearchValue}){
             className="TodoSearch" 
             placeholder="Cebolla"
             value={searchValue}
+            disabled={loading}
             onChange={onSearchValueChange}/>    
     )
 }
