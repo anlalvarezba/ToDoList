@@ -14,6 +14,7 @@ import { TodosLoading } from '../TodosLoading/index';
 import { EmptyTodos } from '../EmptyTodos/index';
 import { ChangeAlertWithStorageListener } from '../ChangeAlert/index';
 
+
 // const defaulttodos=[
 //   {text: 'Cortar cabello', completed: true},
 //   {text: 'Tomar curso intro de React', completed: false},
@@ -34,6 +35,7 @@ function App() {
     searchValue, 
     setSearchValue,
     addTodo,
+    sincronizeTodos,
   } = useTodos();
 
   return(
@@ -103,7 +105,9 @@ function App() {
               </Modal>
             )}              
       <CreateTodoButton setOpenModal={setOpenModal}/>
-      <ChangeAlertWithStorageListener />
+      <ChangeAlertWithStorageListener 
+        sincronize={sincronizeTodos}
+      />
     </React.Fragment>);
 }
 
