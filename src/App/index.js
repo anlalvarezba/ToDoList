@@ -12,6 +12,7 @@ import { TodoForm } from '../TodoForm/index';
 import { TodosError } from '../TodosError/index';
 import { TodosLoading } from '../TodosLoading/index';
 import { EmptyTodos } from '../EmptyTodos/index';
+import { ChangeAlertWithStorageListener } from '../ChangeAlert/index';
 
 // const defaulttodos=[
 //   {text: 'Cortar cabello', completed: true},
@@ -102,6 +103,7 @@ function App() {
               </Modal>
             )}              
       <CreateTodoButton setOpenModal={setOpenModal}/>
+      <ChangeAlertWithStorageListener />
     </React.Fragment>);
 }
 
