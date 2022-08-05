@@ -1,7 +1,7 @@
 import React from 'react';
 
 function useLocalStorage(itemName, initialValue){
-
+  const [sincronizedItem, setSincronizedItem] = React.useState(true);
   const [error, setError] = React.useState(false);
   const [loading, setLoading] = React.useState(true);
   const [item, setNewItem] = React.useState(initialValue);
@@ -28,9 +28,10 @@ function useLocalStorage(itemName, initialValue){
       } finally {
         // Se puede usar la ultima parte del try/catch para terminar la carga
         setLoading(false);
+        setSincronizedItem(true);
       }
     } , 1000);
-  }, []);
+  }, [sincronizedItem]);
 
   
 
@@ -44,12 +45,19 @@ function useLocalStorage(itemName, initialValue){
       setError(error);
     }
   }
+
+  const sincronizeItem = () => {
+    setLoading(true);
+    setSincronizedItem(false);
+  };
+
   //Para tener un mejor control de los datos retornados los regresamos dentro de un objeto
   return {
     item,
     saveNewItem,
     loading, 
     error,
+    sincronizeItem,
   }
 }
 

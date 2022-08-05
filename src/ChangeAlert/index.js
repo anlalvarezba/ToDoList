@@ -7,7 +7,7 @@ function ChangeAlert({show, toggleShow}){
             <div>
                 <p>Hay cambios sin actualizar.</p>
                 <button
-                    onClick={() => { toggleShow(false)}}
+                    onClick={toggleShow}
                 >
                     Refresca la pagina
                 </button>

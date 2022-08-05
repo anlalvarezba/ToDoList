@@ -9,10 +9,16 @@ function withStorageListener(WrappedComponent){
                 setStorageChange(true);
             }
         }); 
+
+        const toggleShow =  () => {
+            props.sincronize();
+            setStorageChange(false);
+        }
+
         return(
             <WrappedComponent
                 show={storageChange}
-                toggleShow={setStorageChange}
+                toggleShow={toggleShow}
             />
         );
     };
