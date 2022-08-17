@@ -50,23 +50,26 @@ function useTodos(){
         saveTodos(newTodos);
       };
 
-      return(
+      const states = {
+        loading ,
+        error ,
+        totalTodos ,
+        completedTodos ,
+        searchValue ,
+        searchedTodos ,
+        openModal ,
+      };
+
+      const stateUpdates =
         {
-            loading ,
-            error ,
-            totalTodos ,
-            completedTodos ,
-            searchValue ,
             setSearchValue ,
-            searchedTodos ,
             completeTodo ,
             addTodo , 
             deleteTodo ,
-            openModal ,
             setOpenModal  ,
             sincronizeTodos,
-        }
-      );
+        };
+        return {states, stateUpdates};
 }
 
 //Exportamos nuestro proveedro y nuestro contexto, en el context tambien el consumer, para acceder a nuestro contexto

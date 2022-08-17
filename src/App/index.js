@@ -22,21 +22,28 @@ import { ChangeAlert } from '../ChangeAlert/index';
 
 function App() {
   const {
-    error ,
-    loading,
-    searchedTodos ,
-    completeTodo ,
-    deleteTodo ,
-    openModal ,
-    setOpenModal ,
-    totalTodos,
-    completedTodos,
-    searchValue, 
-    setSearchValue,
-    addTodo,
-    sincronizeTodos,
+    states, stateUpdates
   } = useTodos();
+ 
+  const {
+    loading ,
+    error ,
+    totalTodos ,
+    completedTodos ,
+    searchValue ,
+    searchedTodos ,
+    openModal ,
+  } = states;
 
+  const {
+    setSearchValue ,
+    completeTodo ,
+    addTodo , 
+    deleteTodo ,
+    setOpenModal  ,
+    sincronizeTodos,
+  } = stateUpdates;
+  
   return(
     <React.Fragment>
       <TodoHeader loading={loading}>
